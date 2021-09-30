@@ -33,7 +33,9 @@ public class Mutex implements Lock, java.io.Serializable {
      @Override
      protected boolean tryRelease(int releases) {
        assert releases == 1; // Otherwise unused
-       if (getState() == 0) throw new IllegalMonitorStateException();
+       if (getState() == 0) {
+           throw new IllegalMonitorStateException();
+       }
        setExclusiveOwnerThread(null);
        setState(0);
        return true;
