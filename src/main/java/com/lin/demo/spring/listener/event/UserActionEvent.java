@@ -4,6 +4,7 @@ import com.lin.demo.spring.listener.constant.EnumUserOperate;
 import com.lin.demo.spring.listener.pojo.User;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.stereotype.Component;
 
@@ -27,7 +28,7 @@ public class UserActionEvent extends ApplicationEvent {
     //数据对象
     private User user;
 
-    public UserActionEvent(Object source) {
+    public UserActionEvent(@Qualifier("compositeDiscoveryClient") Object source) {
         super(source);
     }
 }
