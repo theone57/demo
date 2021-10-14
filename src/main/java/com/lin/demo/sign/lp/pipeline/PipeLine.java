@@ -6,6 +6,7 @@ import com.lin.demo.sign.lp.pipeline.model.PipeLineContext;
 
 /**
  * PipeLine 管道接口，包括添加阀门方法以及开启管道方法
+ * {@link PipelineTest}
  */
 public interface PipeLine {
     /**

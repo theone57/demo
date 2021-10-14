@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.lin.demo.DemoApplication;
 import com.lin.demo.sign.lp.pipeline.model.FlowResult;
 import com.lin.demo.sign.lp.pipeline.model.PipeLineContext;
+import com.lin.demo.sign.lp.pipeline.process.Processor;
 import com.lin.demo.sign.lp.pipeline.validator.OrderPreviewValidator;
 import com.lin.demo.sign.lp.pipeline.validator.Validator;
 import lombok.extern.slf4j.Slf4j;
@@ -22,11 +23,10 @@ public class PipelineTest {
     private NormalPipeLine normalPipeLine;
     @Autowired
     private Validator validator;
-
     @Autowired
     private OrderPreviewValidator orderPreviewValidator;
-//	@Autowired
-//	private Processor processor;
+    @Autowired
+    private Processor processor;
 
     @Test
     public void testUserController() {
@@ -36,7 +36,7 @@ public class PipelineTest {
         // 增加阀门
         normalPipeLine.addValve(validator); // 参数校验阀门
         normalPipeLine.addValve(orderPreviewValidator); // 业务校验阀门
-//		normalPipeLine.addValve(processor); // 业务处理阀门
+        normalPipeLine.addValve(processor); // 业务处理阀门
         // 管道执行
         FlowResult flowResult = normalPipeLine.start(pipeLineContext);
         log.info(JSON.toJSONString(flowResult));
