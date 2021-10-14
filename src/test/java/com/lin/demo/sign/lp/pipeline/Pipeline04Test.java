@@ -1,12 +1,13 @@
 package com.lin.demo.sign.lp.pipeline;
 
 import com.lin.demo.DemoApplication;
-import com.lin.demo.sign.lp.pipeline_04.model.Context;
-import com.lin.demo.sign.lp.pipeline_04.pipeline.ValidatePipeLine;
-import com.lin.demo.sign.lp.pipeline_04.value.handle.FirstHandler;
-import com.lin.demo.sign.lp.pipeline_04.value.handle.SecondHandler;
-import com.lin.demo.sign.lp.pipeline_04.value.validator.FirstValidator;
-import com.lin.demo.sign.lp.pipeline_04.value.validator.SecondDayValidator;
+import com.lin.demo.sign.stu._25pipeline.pipeline_04.model.Context;
+import com.lin.demo.sign.stu._25pipeline.pipeline_04.pipeline.Pipeline;
+import com.lin.demo.sign.stu._25pipeline.pipeline_04.pipeline.ValidatePipeLine;
+import com.lin.demo.sign.stu._25pipeline.pipeline_04.value.handle.FirstHandler;
+import com.lin.demo.sign.stu._25pipeline.pipeline_04.value.handle.SecondHandler;
+import com.lin.demo.sign.stu._25pipeline.pipeline_04.value.validator.FirstValidator;
+import com.lin.demo.sign.stu._25pipeline.pipeline_04.value.validator.SecondDayValidator;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,14 +38,14 @@ public class Pipeline04Test {
     @Test
     public void test() {
         Context context = new Context();
-//        DefaultPipeLine defaultPipeLine = new DefaultPipeLine(context);
+//        Pipeline defaultPipeLine = new DefaultPipeLine(context);
 //        defaultPipeLine.addLast(firstValidator);
 //        defaultPipeLine.addLast(secondDayValidator);
 //        defaultPipeLine.addLast(firstHandler);
 //        defaultPipeLine.addLast(secondHandler);
 //        defaultPipeLine.start();
 
-        ValidatePipeLine validatePipeLine = new ValidatePipeLine(context);
+        Pipeline validatePipeLine = new ValidatePipeLine(context);
         validatePipeLine.addLast(firstValidator);
         validatePipeLine.addLast(secondDayValidator);
         validatePipeLine.addLast(firstHandler);

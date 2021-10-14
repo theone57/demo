@@ -2,11 +2,12 @@ package com.lin.demo.sign.lp.pipeline;
 
 import com.alibaba.fastjson.JSON;
 import com.lin.demo.DemoApplication;
-import com.lin.demo.sign.lp.pipeline.model.FlowResult;
-import com.lin.demo.sign.lp.pipeline.model.PipeLineContext;
-import com.lin.demo.sign.lp.pipeline.process.Processor;
-import com.lin.demo.sign.lp.pipeline.validator.OrderPreviewValidator;
-import com.lin.demo.sign.lp.pipeline.validator.Validator;
+import com.lin.demo.sign.stu._25pipeline.pipeline.NormalPipeLine;
+import com.lin.demo.sign.stu._25pipeline.pipeline.model.FlowResult;
+import com.lin.demo.sign.stu._25pipeline.pipeline.model.PipeLineContext;
+import com.lin.demo.sign.stu._25pipeline.pipeline.process.Processor;
+import com.lin.demo.sign.stu._25pipeline.pipeline.validator.OrderPreviewValidator;
+import com.lin.demo.sign.stu._25pipeline.pipeline.validator.Validator;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
