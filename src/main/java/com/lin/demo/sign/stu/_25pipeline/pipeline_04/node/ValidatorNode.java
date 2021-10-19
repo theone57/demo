@@ -13,15 +13,23 @@ import java.util.Objects;
 @Data
 @NoArgsConstructor
 public class ValidatorNode {
-
+    /**
+     * 当前 阀门
+     */
     private Value validator;
-
+    /**
+     * 下一个 节点
+     */
     private ValidatorNode nextNode;
 
     public ValidatorNode(Value validator) {
         this.validator = validator;
     }
 
+    /**
+     * 执行
+     * @param context
+     */
     public void execute(Context context) {
         boolean hasNext = Objects.nonNull(nextNode);
         // 不可用，执行下一个

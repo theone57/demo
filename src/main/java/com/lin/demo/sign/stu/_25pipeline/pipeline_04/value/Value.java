@@ -45,7 +45,7 @@ public interface Value<T extends Context> {
     String getName();
 
     /**
-     * 校验器名
+     * 校验器
      *
      * @param context
      */

@@ -12,8 +12,13 @@ import java.util.Objects;
 @Data
 @NoArgsConstructor
 public class DefaultNode {
+    /**
+     * 当前 阀门
+     */
     private Value value;
-
+    /**
+     * 下一个 节点
+     */
     private DefaultNode nextNode;
 
     public DefaultNode(Value value) {

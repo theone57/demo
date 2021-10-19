@@ -34,6 +34,7 @@ public class ValidatePipeLine implements Pipeline {
         ValidatorNode tailNode = tail;
         ValidatorNode handlerNode;
         for (Value validator : validators) {
+
             handlerNode = new ValidatorNode(validator);
             tailNode.setNextNode(handlerNode);
             tailNode = handlerNode;

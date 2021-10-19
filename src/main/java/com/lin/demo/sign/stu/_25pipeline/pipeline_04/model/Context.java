@@ -12,4 +12,3 @@ import lombok.Data;
 public class Context {
     private BatchBo batchBo;
 }
-

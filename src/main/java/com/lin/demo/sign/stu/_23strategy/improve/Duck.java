@@ -22,7 +22,6 @@ public abstract class Duck {
 	}
 
 	public void fly() {
-
 		//改进
 		if(flyBehavior != null) {
 			flyBehavior.fly();
