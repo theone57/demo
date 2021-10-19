@@ -1,10 +1,12 @@
-package com.lin.demo.sign.stu._15command.lin;
+package com.lin.demo.sign.stu._15command.lin.command;
+
+import com.lin.demo.sign.stu._15command.lin.CommandContext;
 
 /**
  * @author linpu
  * @dateTime 2021-10-19 10:18
  * @email im.linpu@qq.com
- * @description
+ * @description 命令接口
  */
 public interface Command {
 

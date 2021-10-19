@@ -22,8 +22,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class MyCommandTest {
     @Test
     public void test() {
-
-        Client.build(CommandTypeEnum.LIGHT).method(new CommandContext("lin","18","m"));
+        Client.build(CommandTypeEnum.Home).method(new CommandContext("lin","18","m"));
     }
 }
 

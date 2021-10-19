@@ -1,4 +1,6 @@
-package com.lin.demo.sign.stu._15command.lin;
+package com.lin.demo.sign.stu._15command.lin.solider;
+
+import com.lin.demo.sign.stu._15command.lin.CommandContext;
 
 /**
  * @author linpu

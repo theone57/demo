@@ -9,7 +9,7 @@ import lombok.ToString;
  * @author linpu
  * @dateTime 2021-10-19 10:19
  * @email im.linpu@qq.com
- * @description
+ * @description 命令上下文
  */
 @Data
 @NoArgsConstructor
@@ -19,6 +19,5 @@ public class CommandContext {
     private String name;
     private String age;
     private String gender;
-
 }
 
