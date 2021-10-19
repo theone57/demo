@@ -12,11 +12,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class FirstLightSolider implements Solider {
     @Override
-    public void method1(CommandContext commandContext) {
-        System.out.println("=========================");
-        System.out.println("FirstLightSolider 执行...");
-        System.out.println("commandContext = " + commandContext);
-        System.out.println("=========================");
+    public void on(CommandContext commandContext) {
+        System.out.println("-> FirstLightSolider 执行...");
     }
 }
 

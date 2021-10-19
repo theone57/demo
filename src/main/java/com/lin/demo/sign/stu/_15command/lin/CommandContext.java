@@ -1,6 +1,7 @@
 package com.lin.demo.sign.stu._15command.lin;
 
-import lombok.AllArgsConstructor;
+import com.lin.demo.sign.stu._15command.lin.thrid.MsgComponent;
+import com.lin.demo.sign.stu._15command.lin.thrid.MsgTypeEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -13,11 +14,18 @@ import lombok.ToString;
  */
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @ToString
 public class CommandContext {
     private String name;
     private String age;
     private String gender;
+    private MsgTypeEnum msgTypeEnum;
+    private MsgComponent.MsgParam msgParam;
+
+    public CommandContext(String name, String age, String gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
 }
 

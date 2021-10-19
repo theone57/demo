@@ -10,11 +10,11 @@ import com.lin.demo.sign.stu._15command.lin.CommandContext;
  */
 public interface Solider {
 
-    default void method1(CommandContext commandContext) {
+    default void on(CommandContext commandContext) {
         throw new UnsupportedOperationException("新兵不支持此操作, 请覆写");
     }
 
-    default void method2(CommandContext commandContext) {
+    default void msg(CommandContext commandContext) {
         throw new UnsupportedOperationException("新兵不支持此操作, 请覆写");
     }
 }
