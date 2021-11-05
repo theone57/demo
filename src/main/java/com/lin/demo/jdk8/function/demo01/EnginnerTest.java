@@ -1,9 +1,5 @@
 package com.lin.demo.jdk8.function.demo01;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -84,11 +80,5 @@ public class EnginnerTest {
 
 }
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-class Enginner {
-    private String job;
-    private Integer age;
-}
+
 

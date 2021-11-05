@@ -8,7 +8,8 @@ public class CurrentConditions implements Observer {
 	private float humidity;
 
 	// 更新 天气情况，是由 WeatherData 来调用，我使用推送模式
-	public void update(float temperature, float pressure, float humidity) {
+	@Override
+    public void update(float temperature, float pressure, float humidity) {
 		this.temperature = temperature;
 		this.pressure = pressure;
 		this.humidity = humidity;
