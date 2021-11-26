@@ -16,6 +16,8 @@ import java.util.concurrent.TimeoutException;
  * email: 834865081@qq.com
  * Copyright:归个人所有，转载请表名 出处
  * 个人博客地址：http://blog.csdn.net/hfmbook
+ *
+ * https://blog.csdn.net/u013310119/article/details/81334502?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EOPENSEARCH%7Edefault-2.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EOPENSEARCH%7Edefault-2.no_search_link
  * */
 public class CallMethod {
 	
@@ -50,7 +52,8 @@ public class CallMethod {
         String result = null;  
         try{
         	/**获取方法返回值 并设定方法执行的时间为10秒*/
-            result = future.get(10 , TimeUnit.SECONDS );  
+			System.out.println("-------10s--------");
+            result = future.get(3 , TimeUnit.SECONDS );
             
         }catch (InterruptedException e) {  
             future.cancel(true);  
@@ -68,6 +71,7 @@ public class CallMethod {
 	
 	public Object call(Integer id){
 		try {
+			System.out.println("call -----");
 			Thread.sleep( 11000 ) ; 
 		} catch (Exception e) {
 		}
