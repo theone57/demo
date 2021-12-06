@@ -56,6 +56,7 @@ class LinkImpl05<T> implements ILink05<T> {
         }
         return returnData ; // 返回当前的数组内容
     }
+    @Override
     public T get(int index) {	// 操作的覆写
         if (index >= this.count) { // 当前的索引无效
             return null ; // 没有对应的数据内容

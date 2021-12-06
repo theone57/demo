@@ -19,6 +19,7 @@ class LinkImpl03<T> implements ILink03<T> {
     private int count ; // 统计计数
     // 在LinkImpl类里面追加有一个新的属性，作为性能的提升
     private Node lastNode ; // 保存最后一个节点
+    @Override
     public void add(T data) {	// 接口中进行方法覆写
         if (data == null) {
             return ; // 结束方法调用
