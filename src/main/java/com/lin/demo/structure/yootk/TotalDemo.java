@@ -348,7 +348,7 @@ class Student {
 }
 
 public class TotalDemo { // 李兴华编程训练营：edu.yootk.com
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Student student = new Student();
         student.buy(new MathBook("布尔传奇", 67.8, "乔治·布尔"));
         student.buy(new MathBook("线性代数", 37.8, "国内数学家"));
@@ -358,7 +358,7 @@ public class TotalDemo { // 李兴华编程训练营：edu.yootk.com
         student.buy(new BigDataBook("Flink实时分析", 129.8, "小李老师"));
         student.buy(new BigDataBook("Spark实时分析", 1569.8, "小李老师"));
         student.give(new ProgramBook("Java从入门到项目实战", 99.8, "李兴华")); // 转送
-        Object books[] = student.search("李").toArray(); // 获取全部的图书信息
+        Object[] books = student.search("李").toArray(); // 获取全部的图书信息
         for (Object book : books) {
             System.out.println(book);
         }
