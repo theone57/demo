@@ -19,5 +19,12 @@ public class ConcreteWebSite extends WebSite {
 		System.out.println("网站的发布形式为:" + type + " 在使用中 .. 使用者是" + user.getName());
 	}
 
+	public static void main(String[] args) {
+		Class<ConcreteWebSite> concreteWebSiteClass = ConcreteWebSite.class;
+		String s = concreteWebSiteClass.toString();
+		System.out.println("s = " + s);
+		String name = concreteWebSiteClass.getName();
+		System.out.println("name = " + name);
+	}
 
 }
