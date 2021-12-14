@@ -1,4 +1,4 @@
-package com.lin.demo.sign.lp.pipeline._15command;
+package com.lin.demo.sign.lp._15command;
 
 import com.lin.demo.DemoApplication;
 import com.lin.demo.sign.stu._15command.lin.Client;

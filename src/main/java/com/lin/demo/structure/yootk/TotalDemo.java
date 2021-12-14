@@ -1,5 +1,7 @@
 package com.lin.demo.structure.yootk;
 
+import java.util.Arrays;
+
 interface ILink<T> {  // 链表的实现标准
     public void add(T data); // 实现数据增加
 
@@ -22,9 +24,9 @@ interface ILink<T> {  // 链表的实现标准
 
 class LinkImpl<T> implements ILink<T> {
     // 使用内部类的结构表示该类的所属范围，同时使用private标注其只能够被内部使用
-    private class Node<T> { // 定义描述节点的结构类
+    private static class Node<T> { // 定义描述节点的结构类
         private T data; // 保存所有数据
-        private Node next; // 描述下一个节点
+        private Node<T> next; // 描述下一个节点
 
         public Node(T data) {    // 所有的节点一定要包裹数据
             this.data = data; // 保存数据信息
@@ -32,10 +34,10 @@ class LinkImpl<T> implements ILink<T> {
     }
 
     // ========================= 链表实现的相关的处理操作 =============
-    private Node root; // 根节点
+    private Node<T> root; // 根节点
     private int count; // 统计计数
     // 在LinkImpl类里面追加有一个新的属性，作为性能的提升
-    private Node lastNode; // 保存最后一个节点
+    private Node<T> lastNode; // 保存最后一个节点
 
     @Override
     public void add(T data) {    // 接口中进行方法覆写
@@ -72,7 +74,7 @@ class LinkImpl<T> implements ILink<T> {
         }
         Object[] returnData = new Object[this.count]; // 返回数组信息
         int foot = 0; // 操作角标
-        Node node = this.root; // 通过root获取当前节点
+        Node<T> node = this.root; // 通过root获取当前节点
         while (node != null) {    // 当前存在有节点对象
             returnData[foot++] = node.data; // 获取对象的数据
             node = node.next; // 获取下一个节点
@@ -86,7 +88,7 @@ class LinkImpl<T> implements ILink<T> {
             return null; // 没有对应的数据内容
         }
         int foot = 0; // 进行节点的脚标操作
-        Node node = this.root; // 获取当前节点
+        Node<T> node = this.root; // 获取当前节点
         while (node != null) {    // 当前存在有节点
             if (index == foot++) {    // 索引号相同
                 return (T) node.data; // 返回索引数据
@@ -103,7 +105,7 @@ class LinkImpl<T> implements ILink<T> {
         }
         T returnData = null; // 要返回的数据
         int foot = 0; // 进行节点的脚标操作
-        Node node = this.root; // 获取当前节点
+        Node<T> node = this.root; // 获取当前节点
         while (node != null) {    // 当前存在有节点
             if (index == foot++) {    // 索引号相同
                 returnData = (T) node.data; // 返回索引数据
@@ -119,7 +121,7 @@ class LinkImpl<T> implements ILink<T> {
         if (this.root == null || data == null) {    // 此时没有根节点
             return false; // 没有要查询的数据内容
         }
-        Node node = this.root; // 获取当前节点
+        Node<T> node = this.root; // 获取当前节点
         while (node != null) {
             if (node.data.equals(data)) {    // 利用equals()方法进行判断
                 return true;
@@ -139,8 +141,8 @@ class LinkImpl<T> implements ILink<T> {
             returnData = (T) this.root.data; // 保存原始节点数据
             this.root = this.root.next; // 第二个节点作为根节点
         } else {// 如果现在不是根节点，此时已经判断过了根节点是否存在
-            Node parentNode = this.root; // 第2个节点的父节点为root
-            Node node = this.root.next; // 从第2个节点开始判断
+            Node<T> parentNode = this.root; // 第2个节点的父节点为root
+            Node<T> node = this.root.next; // 从第2个节点开始判断
             while (node != null) {    // 不断循环
                 if (node.data.equals(data)) {    // 当前节点数据满足
                     returnData = (T) node.data; // 获取要删除的数据
@@ -359,8 +361,7 @@ public class TotalDemo { // 李兴华编程训练营：edu.yootk.com
         student.buy(new BigDataBook("Spark实时分析", 1569.8, "小李老师"));
         student.give(new ProgramBook("Java从入门到项目实战", 99.8, "李兴华")); // 转送
         Object[] books = student.search("李").toArray(); // 获取全部的图书信息
-        for (Object book : books) {
-            System.out.println(book);
-        }
+
+        Arrays.stream(books).forEach(System.out::println);
     }
 }
