@@ -19,6 +19,8 @@ public class BigDataSelectServiceImpl {
     @Resource
     private ThreadPoolExecutor threadPoolExecutor;
 
+    public static void main(String[] args) {
+    }
     public String handle1(String list) throws InterruptedException {
 ///        Integer  dataCount =    nbzhizhubiaoMapper.selectCount(Wrappers.emptyWrapper());
         // 总数量
@@ -57,6 +59,7 @@ public class BigDataSelectServiceImpl {
             });
         }
         countDownLatch.await();
+
         log.info("success");
         return "success";
     }
