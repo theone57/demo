@@ -1,8 +1,8 @@
 package com.lin.demo.sign.stu._13proxy.cglib;
 
-import net.sf.cglib.proxy.Enhancer;
-import net.sf.cglib.proxy.MethodInterceptor;
-import net.sf.cglib.proxy.MethodProxy;
+import org.springframework.cglib.proxy.Enhancer;
+import org.springframework.cglib.proxy.MethodInterceptor;
+import org.springframework.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
 
@@ -39,5 +39,4 @@ public class ProxyFactory implements MethodInterceptor {
 		System.out.println("Cglib代理模式 ~~ 提交");
 		return returnVal;
 	}
-
 }
