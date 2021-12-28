@@ -10,7 +10,9 @@ import java.util.Arrays;
  */
 public enum PlatformEnum {
 
-    FIRST_PLATFORM(0);
+    FIRST_PLATFORM(0),
+    SECOND_PLATFORM(0),
+    ;
 
     private Integer code;
 
@@ -29,5 +31,9 @@ public enum PlatformEnum {
     public static PlatformEnum getByCode(int code) {
         return Arrays.stream(PlatformEnum.values()).filter(i -> i.getCode() == code).findFirst()
                 .orElse(null);
+    }
+    public static PlatformEnum getByCodeOrThrow(int code) throws NoSuchFieldException {
+        return Arrays.stream(PlatformEnum.values()).filter(i -> i.getCode() == code).findFirst()
+                .orElseThrow(NoSuchFieldException::new);
     }
 }

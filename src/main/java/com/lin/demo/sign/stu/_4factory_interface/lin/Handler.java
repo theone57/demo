@@ -6,10 +6,16 @@ package com.lin.demo.sign.stu._4factory_interface.lin;
  * @email im.linpu@qq.com
  * @description 保险转换接口
  */
-public interface RequestAndEventConvert {
+public interface Handler {
 
-    PlatformEnum setInsuranceType();
+    PlatformEnum setPlatformType();
 
     // 其他执行
+
+    default void print() {
+        System.out.println("hello world from Handler");
+    }
+
+    String out();
 }
 
