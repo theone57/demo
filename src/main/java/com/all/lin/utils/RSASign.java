@@ -221,7 +221,38 @@ public class RSASign {
             }
         }
     }
-
+    /**
+     * map转字符串
+     *
+     * @param map   集合
+     * @param param 追加参数
+     * @return
+     */
+    public static void mapToString2(TreeMap<String, Object> map, StringBuffer param) {
+        //循环集合
+        for (String key : map.keySet()) {
+            //值
+            Object obj = map.get(key);
+            //判断不同类型，执行不同参数转换
+            if (obj instanceof List) {
+                // 转list
+                List<TreeMap<String, Object>> list = JsonUtils.bean(JSONObject.toJSONString(obj), List.class);
+                // 递归遍历
+                for (Object m : list) {
+                    mapToString(JsonUtils.bean(JSONObject.toJSONString(m), TreeMap.class), param);
+                }
+            } else if (obj instanceof Map) {
+                // 递归遍历
+                mapToString(JsonUtils.bean(JSONObject.toJSONString(obj), TreeMap.class), param);
+            } else {
+                //判断是否为空
+                if (StringUtils.isNotBlank(Convert.toStr(obj))) {
+                    //附值
+                    param.append(Convert.toStr(obj));
+                }
+            }
+        }
+    }
     public static <T> T bean(String value, Class<T> basicClass) {
         if (StringUtils.isEmpty(value)) {
             return null;

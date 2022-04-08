@@ -1,5 +1,6 @@
 package com.all.lin.spring.listener.controller;
 
+import com.all.lin.spring.advice.RequestAdvice;
 import com.all.lin.spring.listener.pojo.User;
 import com.all.lin.spring.listener.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,17 +17,30 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("user")
+@RequestAdvice
 public class UserController {
     @Autowired
     private UserService userService;
 
     /**
      * 新增用户操作
+     *
      * @param user
      */
     @PostMapping("add")
     public void add(User user) {
         userService.addUser(user);
+    }
+
+    /**
+     * 新增用户操作
+     *
+     * @param user
+     */
+    @PostMapping("test")
+    public void test(User user) {
+//        userService.addUser(user);
+        System.out.println(" come in");
     }
 }
 
