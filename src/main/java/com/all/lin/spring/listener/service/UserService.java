@@ -30,6 +30,10 @@ public class UserService {
      * 版权声明：本文为CSDN博主「wshanshi」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
      * 原文链接：https://blog.csdn.net/weixin_43770545/article/details/105971971
      *
+     * Question
+     * 1.业务类使用new userActionEvent(this); 实例化Event传递this目的是为了啥，有什么作用？
+     * 2.监听器核心类，抛出异常return event; 你知道会造成死循环吗？为什么方法不定义void出现异常自己捕获处理
+     *
      * @param user
      * @return
      */

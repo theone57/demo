@@ -22,6 +22,7 @@ public class ListUtils {
     public static <E> void sort(List<E> list, final boolean isAsc, final String... sortnameArr) {
         Collections.sort(list, new Comparator<E>() {
 
+            @Override
             public int compare(E a, E b) {
                 int ret = 0;
                 try {

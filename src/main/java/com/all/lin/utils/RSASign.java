@@ -30,6 +30,34 @@ public class RSASign {
     private static final String SIGN_TYPE_RSA = "RSA";
     private static final String SIGN_ALGORITHMS = "SHA256withRSA";
     private static ObjectMapper MAPPER = new ObjectMapper();
+    private static final String BODY2 = "{\\n\" +\n" +
+            "                    \"   \\\"body\\\": {\\n\" +\n" +
+            "                    \"       \\\"policyList\\\": [\\n\" +\n" +
+            "                    \"           {\\n\" +\n" +
+            "                    \"               \\\"CITYID\\\": 9016,\\n\" +\n" +
+            "                    \"               \\\"COUNTYID\\\": 3301,\\n\" +\n" +
+            "                    \"               \\\"MOB_URL\\\": \\\"www.jd.com\\\",\\n\" +\n" +
+            "                    \"               \\\"ZCJD\\\": \\\"www.jd.com\\\",\\n\" +\n" +
+            "                    \"               \\\"ZCSB\\\": \\\"www.jd.com\\\",\\n\" +\n" +
+            "                    \"               \\\"ZC_TYPE1\\\": \\\"1\\\",\\n\" +\n" +
+            "                    \"               \\\"ZC_TYPE2\\\": \\\"1\\\",\\n\" +\n" +
+            "                    \"               \\\"ZXDH\\\": \\\"1\\\",\\n\" +\n" +
+            "                    \"               \\\"ZGBMID\\\": 1,\\n\" +\n" +
+            "                    \"               \\\"PCZT\\\": 1,\\n\" +\n" +
+            "                    \"               \\\"PC_URL\\\": \\\"www.baidu.com\\\",\\n\" +\n" +
+            "                    \"               \\\"SBJSSJ\\\": \\\"2020-06-22\\\",\\n\" +\n" +
+            "                    \"               \\\"SBKSSJ\\\": \\\"2020-05-22\\\",\\n\" +\n" +
+            "                    \"               \\\"SBMC\\\": \\\"测试\\\",\\n\" +\n" +
+            "                    \"               \\\"ZCYD\\\": \\\"测试\\\",\\n\" +\n" +
+            "                    \"               \\\"SBXMLXMC\\\": \\\"申报类型名称\\\",\\n\" +\n" +
+            "                    \"               \\\"SBZCLXMC\\\": \\\"申报类型\\\",\\n\" +\n" +
+            "                    \"               \\\"XMBH\\\": \\\"123456\\\",\\n\" +\n" +
+            "                    \"               \\\"YXTZC_ID\\\": \\\"123\\\",\\n\" +\n" +
+            "                    \"               \\\"ZGBM\\\": \\\"主管部门\\\"\\n\" +\n" +
+            "                    \"           }\\n\" +\n" +
+            "                    \"       ]\\n\" +\n" +
+            "                    \"   }\\n\" +\n" +
+            "                    \"}";
     private static final String BODY = "{\n" +
             "\t\"body\": {\n" +
             "\t\t\"projectInfo\": {\n" +

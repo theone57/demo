@@ -19,14 +19,14 @@ public class ThreadLocalProblem {
 
     public static void main(String[] args) throws Exception {
 
-        notUseInheritableThreadLocal();
+//        notUseInheritableThreadLocal();
 
 //        userInheritableDemo()
 //        ;
         // 使用线程池
 //        useThreadPool();
 
-//        useTransmittable();
+        useTransmittable();
     }
 
     private static void notUseInheritableThreadLocal() {

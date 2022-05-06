@@ -106,7 +106,8 @@ abstract class AbstractHandler implements Handler {
 //处理器
 class Handler1 extends AbstractHandler {
 
-    public Handler1() {
+    public
+    Handler1() {
         super.view = new ViewImpl();
     }
 
