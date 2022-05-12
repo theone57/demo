@@ -466,6 +466,20 @@
             <artifactId>spring-cloud-gateway-core</artifactId>
             <version>2.2.3.RELEASE</version>
         </dependency>
+
+
+        <!--获取相机exif信息-->
+        <dependency>
+            <groupId>com.drewnoakes</groupId>
+            <artifactId>metadata-extractor</artifactId>
+            <version>2.16.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.0.M3</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
