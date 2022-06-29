@@ -3,7 +3,10 @@ package com.all.lin.threadlocal;
 import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.ttl.TransmittableThreadLocal;
 import com.alibaba.ttl.threadpool.TtlExecutors;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -15,7 +18,11 @@ import java.util.concurrent.Executors;
  * <p>
  * https://blog.csdn.net/qq_26012495/article/details/104379137
  */
+@Service
 public class ThreadLocalProblem {
+
+    @Resource(name = "myTaskExecutor")
+    private ThreadPoolTaskExecutor threadPoolTaskExecutor; // TODO 芋艿：未来提供独立的线程池
 
     public static void main(String[] args) throws Exception {
 
@@ -24,9 +31,9 @@ public class ThreadLocalProblem {
 //        userInheritableDemo()
 //        ;
         // 使用线程池
-//        useThreadPool();
+        useThreadPool();
 
-        useTransmittable();
+//        useTransmittable();
     }
 
     private static void notUseInheritableThreadLocal() {
@@ -92,7 +99,6 @@ public class ThreadLocalProblem {
 
     private static void useTransmittable() {
         ThreadLocal<String> threadLocal = new TransmittableThreadLocal<>();
-
         ExecutorService threadPool = TtlExecutors.getTtlExecutorService(Executors.newFixedThreadPool(2));
         for (int i = 0; i < 5; i++) {
             threadLocal.set("初始化的值能继承吗？" + i);
@@ -107,5 +113,24 @@ public class ThreadLocalProblem {
         }
     }
 
+    /**
+     * 线程池
+     *
+     * @see com.all.config.AsyncConfig
+     */
+    public void useTransmittableByPool() {
+        ThreadLocal<String> threadLocal = new TransmittableThreadLocal<>();
+        for (int i = 0; i < 10; i++) {
+            threadLocal.set("初始化的值能继承吗？" + i);
+            System.out.println("父线程的ThreadLocal值：" + threadLocal.get());
+            threadPoolTaskExecutor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println("子线程到了");
+                    System.out.println("=========子线程的ThreadLocal值：" + threadLocal.get());
+                }
+            });
+        }
+    }
 
 }

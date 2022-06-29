@@ -3,8 +3,11 @@ package com.all.lin.spring.listener.pojo;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 /**
  * @author linpu
@@ -16,10 +19,10 @@ import javax.validation.constraints.NotNull;
 @Data
 @Accessors(chain = true)
 public class User {
-    @NotBlank(message="名称不能为空")
+    @NotBlank(message = "名称不能为空")
     private String name;
 
-    @NotNull(message="age参数名不能为空")
+    @NotNull(message = "age参数名不能为空")
     private Integer age;
 
     private Integer sex;
@@ -29,6 +32,10 @@ public class User {
     private String phone;
 
     private String address;
+
+    @DecimalMax("10")
+    @DecimalMin("0.5")
+    private BigDecimal money;
 
 }
 

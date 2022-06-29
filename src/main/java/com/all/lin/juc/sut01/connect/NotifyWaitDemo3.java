@@ -31,8 +31,6 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author lin
  * @version v1.0
  * @program juc
- * @description
- * @date 2021-03-30 21:28
  */
 class ShareDataOne3 {
     private Integer number = 0;

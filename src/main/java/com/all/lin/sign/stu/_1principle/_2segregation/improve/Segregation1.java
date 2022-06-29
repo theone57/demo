@@ -54,6 +54,7 @@ class B implements Interface1, Interface2 {
 }
 
 class D implements Interface1, Interface3 {
+	@Override
 	public void operation1() {
 		System.out.println("D 实现了 operation1");
 	}

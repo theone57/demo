@@ -2,6 +2,12 @@ server:
   port: 10086
   max-http-header-size: 10000000
 spring:
+  datasource: # mysql数据库连接
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #&databaseuseUnicode=true&characterEncoding=utf8&autoReconnect=true
+    url: jdbc:mysql://localhost:3306/demo?serverTimezone=GMT%2B8&databaseuseUnicode=true&characterEncoding=utf8&autoReconnect=true
+    username: root
+    password: root
   # 多个接口上的@FeignClient(“相同服务名”)会报错，overriding is disabled。
   # 设置 为true ,即 允许 同名
   main:
@@ -9,7 +15,7 @@ spring:
   task:
     # Spring 执行器配置，对应 TaskExecutionProperties 配置类。对于 Spring 异步任务，会使用该执行器。
     execution:
-      thread-name-prefix: cart-async-  # 线程池的线程名的前缀。默认为 task- ，建议根据自己应用来设置
+      thread-name-prefix: my-async-  # 线程池的线程名的前缀。默认为 task- ，建议根据自己应用来设置
       pool: # 线程池相关
         core-size: 100 # 核心线程数，线程池创建时候初始化的线程数。默认为 8 。
         max-size: 500 # 最大线程数，线程池最大的线程数，只有在缓冲队列满了之后，才会申请超过核心线程数的线程。默认为 Integer.MAX_VALUE
