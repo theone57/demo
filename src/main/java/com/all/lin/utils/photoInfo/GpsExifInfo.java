@@ -20,7 +20,7 @@ import java.util.Map;
 public class GpsExifInfo {
 
     public static void main(String[] args) throws ImageProcessingException, IOException {
-        final File file = FileUtil.file("/Users/alex/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/01f6be2a415e8bfbecc0df0467fd57ae/Message/MessageTemp/a15f5f66b82dbe5e6677f655d6f36edb/Image/60131652258054_.pic.jpg");
+        final File file = FileUtil.file("/Users/alex/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/01f6be2a415e8bfbecc0df0467fd57ae/Message/MessageTemp/c2f77d8960b1403a301b889ddf7be4d8/Image/257361652671414_.pic_hd.jpg");
         System.out.println("----------------------------------------\n" + file.getName());
         // 获取照片信息
         Map exifMap = readPicExifInfo(file);
