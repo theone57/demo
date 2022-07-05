@@ -62,7 +62,19 @@ public class AsyncConfig implements AsyncConfigurer {
         return asyncExceptionHandler;
     }
 
-
+    /**
+     * {@code
+     *
+     * @Resource(name = "myTaskExecutor")
+     * private ThreadPoolTaskExecutor myTaskExecutor;
+     * private static Executor wrappedCasTaskExecutor;
+     * // ---
+     * @PostConstruct
+     * private void initExecutor() {
+     * wrappedCasTaskExecutor = TtlExecutors.getTtlExecutor(myTaskExecutor);
+     * }
+     * }
+     */
     @Bean
     public BeanPostProcessor threadPoolTaskExecutorBeanPostProcessor() {
         return new BeanPostProcessor() {
