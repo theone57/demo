@@ -3,10 +3,11 @@ package com.all.lin.threadlocal;
 import cn.hutool.core.thread.ThreadUtil;
 import com.alibaba.ttl.TransmittableThreadLocal;
 import com.alibaba.ttl.threadpool.TtlExecutors;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import com.all.lin.statrter.config.MyAsyncConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -21,8 +22,11 @@ import java.util.concurrent.Executors;
 @Service
 public class ThreadLocalProblem {
 
-    @Resource(name = "myTaskExecutor")
-    private ThreadPoolTaskExecutor threadPoolTaskExecutor; // TODO 芋艿：未来提供独立的线程池
+//    @Resource(name = "myTaskExecutor")
+//    private ThreadPoolTaskExecutor executor;
+    @Autowired
+    @Qualifier("myForkJoinPool")
+    private ExecutorService executor;
 
     public static void main(String[] args) throws Exception {
 
@@ -115,15 +119,14 @@ public class ThreadLocalProblem {
 
     /**
      * 线程池
-     *
-     * @see com.all.config.AsyncConfig
+     * {@link MyAsyncConfig#threadPoolTaskExecutorBeanPostProcessor()}
      */
     public void useTransmittableByPool() {
         ThreadLocal<String> threadLocal = new TransmittableThreadLocal<>();
         for (int i = 0; i < 10; i++) {
             threadLocal.set("初始化的值能继承吗？" + i);
             System.out.println("父线程的ThreadLocal值：" + threadLocal.get());
-            threadPoolTaskExecutor.execute(new Runnable() {
+            executor.execute(new Runnable() {
                 @Override
                 public void run() {
                     System.out.println("子线程到了");

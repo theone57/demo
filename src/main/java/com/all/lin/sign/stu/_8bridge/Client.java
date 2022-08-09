@@ -1,9 +1,14 @@
 package com.all.lin.sign.stu._8bridge;
 
+import com.google.common.collect.Lists;
+
+import java.util.ArrayList;
+
 public class Client {
 
 	public static void main(String[] args) {
-
+		ArrayList<Object> objects = Lists.newArrayList();
+		Object o = objects.get(0);
 		//获取折叠式手机 (样式 + 品牌 )
 
 		Phone phone1 = new FoldedPhone(new XiaoMi());

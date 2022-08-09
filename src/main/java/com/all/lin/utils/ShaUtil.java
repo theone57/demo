@@ -3,11 +3,15 @@ package com.all.lin.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class ShaUtil {
-
+	public static void main(String[] args) throws IOException {
+		Process ps = Runtime.getRuntime().exec("ls");
+		System.out.println("ps = " + ps);
+	}
 	private final static Logger logger = LoggerFactory.getLogger(ShaUtil.class);
 
 	public static String Encrypt(String strSrc) {

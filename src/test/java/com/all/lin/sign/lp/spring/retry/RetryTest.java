@@ -1,7 +1,7 @@
 package com.all.lin.sign.lp.spring.retry;
 
 import com.all.DemoApplication;
-import com.all.lin.spring.retry.TestRetryServiceImpl;
+import com.all.lin.statrter.retry.TestRetryServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

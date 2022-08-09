@@ -2,7 +2,7 @@ package com.all.lin.utils.collection;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.collection.CollectionUtil;
-import com.all.lin.mybatis.customTenant.PayChannelDO;
+import com.all.lin.statrter.mybatis.customtenant.PayChannelDO;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 

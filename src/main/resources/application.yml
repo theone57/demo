@@ -26,9 +26,14 @@ spring:
       shutdown:
         await-termination: true #是否等待异步任务执行完成 Whether the executor should wait for scheduled tasks to complete on shutdown.
         await-termination-period: 60 #等待周期 Maximum time the executor should wait for remaining tasks to complete.
+  jackson:
+    date-format: java.text.SimpleDateFormat
 thread:
   pool:
     coreSize: 500
     maxSize: 2000
     keepAlive: 60
     blockingSize: 5000
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

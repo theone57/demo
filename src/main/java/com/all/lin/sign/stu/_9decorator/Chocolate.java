@@ -9,4 +9,7 @@ public class Chocolate extends Decorator {
 		setPrice(3.0f); // 调味品 的价格
 	}
 
+	public static void main(String[] args) {
+		System.out.println("春年");
+	}
 }
