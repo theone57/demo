@@ -26,6 +26,8 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 public class DemoApplication {
 
     public static void main(String[] args) {
+        // Spring boot通过application.yml设置的MyBatis日志的属性加载是晚于SqlSessionFactoryBean加载的，因此这个设置将会无效，因此在springboot启动之前加载这个日志九可以使用。
+///        LogFactory.useCustomLogging(StdOutImpl.class);
         SpringApplication.run(DemoApplication.class, args);
     }
 
